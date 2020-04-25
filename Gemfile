@@ -54,6 +54,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
   gem 'rails_best_practices', require: false
+  gem 'bullet', '~> 6.1.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -66,7 +67,6 @@ gem 'slim-rails', '~> 3.2.0'
 gem 'figaro', '~> 1.1.1'
 
 gem 'rails-observers', '~> 0.1.5'
-
 gem 'devise', '~> 4.7.1'
 
 group :test do
@@ -76,4 +76,6 @@ group :test do
   gem 'capybara', '~> 3.32.1'
   gem 'selenium-webdriver', '~> 3.142.7'
   gem 'chromedriver-helper', '~> 2.1.1'
+  gem 'factory_bot_rails', '~> 5.1.1'
+  gem 'faker', '~> 2.11.0'
 end

@@ -1,0 +1,21 @@
+
+= render 'navigation'
+
+- if @videos.any?
+  .container
+    h1 Latest videos
+    .row
+      - @videos.each do |video|
+        .col-xs-12.col-sm-6.col-md-4
+          .yt_video.thumbnail
+            = link_to image_tag(video.youtube_url, alt: video.title, class: 'img-rounded'),
+                      video.watch_url, target: '_blank'
+            .caption
+              h5= video.title
+              p
+                = t('publish_at', time: video.published_at.strftime('%-d %B %Y %H:%M'))
+              p
+                span.glyphicon.glyphicon.glyphicon-thumbs-up
+                span.likes = video.likes
+                span.glyphicon.glyphicon.glyphicon-thumbs-down
+                span.dislikes = video.dislikes

@@ -30,4 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome: 'Welcome '
+  funny_videos: 'Funny Videos'
+  your_videos: 'Your Videos'
+  publish_at: Published at %{time}
+  share_by: 'Share by: '
+  description: 'Description:'
+  buttons:
+    share: 'Share a video'
+    logout: 'Logout'
+    signup: 'Sign up'
+    login: 'Login'
+    view_as_grid: 'Grid View'
+  messages:
+    add_successful: 'Video added!'
