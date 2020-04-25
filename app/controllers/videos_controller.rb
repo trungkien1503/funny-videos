@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class VideosController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @videos = Video.order('created_at DESC')
   end
