@@ -3,6 +3,8 @@
 class Video < ApplicationRecord
   YT_LINK_FORMAT = %r{\A.*(youtu.be/|v/|u/\w/|embed/|watch\?v=|\&v=)([^#\&\?]*).*}i.freeze
 
+  paginates_per 6
+
   belongs_to :user
 
   validates :link, presence: true, format: YT_LINK_FORMAT

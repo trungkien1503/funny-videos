@@ -36,6 +36,7 @@ en:
   publish_at: Published at %{time}
   share_by: 'Share by: '
   description: 'Description:'
+  latest_videos: Latest videos
   buttons:
     share: 'Share a video'
     logout: 'Logout'
@@ -44,3 +45,10 @@ en:
     view_as_grid: 'Grid View'
   messages:
     add_successful: 'Video added!'
+  jumbotron:
+    heading: Share your videos with the world!
+    text: Click the button below to share your video from YouTube.
+    share_now: Share a video now!
+  new:
+    title: New video
+    video_hint: A link to the video on YouTube.
