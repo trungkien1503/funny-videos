@@ -1,27 +1,25 @@
-.jumbotron
-  .container
-    h1 Share your videos with the world!
-    p Click the button below to share your video from YouTube.
-    p
-      = link_to 'Add video now!', new_video_path, class: 'btn btn-primary btn-lg'
+= render 'navigation'
+
 - if @videos.any?
   .container
     h1 Latest videos
-    #player-wrapper
-    - @videos.in_groups_of(3) do |group|
-      .row
-        - group.each do |video|
-          - if video
-            .col-md-4
-              .yt_video.thumbnail
-                = link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'img-rounded'),
-                  "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank'
-                .caption
-                  h5= video.title
-                  p
-                    | Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
-                  p
-                    span.glyphicon.glyphicon.glyphicon-thumbs-up
-                    = video.likes
-                    span.glyphicon.glyphicon.glyphicon-thumbs-down
-                    = video.dislikes
+    - @videos.each do |video|
+      .row.video-list-item
+        .yt_video
+          .col-xs-6.col-sm-4
+            iframe width="100%" height="200" src="#{video.embed_url}"
+          .col-xs-6.col-sm-8
+            .caption
+              div
+                span = t('share_by')
+                = video.user.email
+              h5.title = video.title
+              p = t('publish_at', time: video.published_at.strftime('%-d %B %Y %H:%M'))
+              div
+                span.glyphicon.glyphicon.glyphicon-thumbs-up
+                span.likes = video.likes
+                span.glyphicon.glyphicon.glyphicon-thumbs-down
+                span.dislikes = video.dislikes
+              div
+                .description-label = t('description')
+                p = video.description

@@ -1,0 +1,23 @@
+.mr-10 {
+  margin-right: 10px;
+}
+
+.likes {
+  margin: 0 5px;
+  color: blue;
+}
+
+.dislikes {
+  margin: 0 5px;
+  color: brown;
+}
+
+.video-list-item {
+  margin: 20px 0;
+  .title {
+    font-weight: bold;
+  }
+  .description_label {
+    margin: 10px 0;
+  }
+}
