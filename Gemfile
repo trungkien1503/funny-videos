@@ -8,7 +8,7 @@ ruby '2.5.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -64,4 +64,13 @@ gem 'slim-rails', '~> 3.2.0'
 gem 'figaro', '~> 1.1.1'
 
 gem 'rails-observers', '~> 0.1.5'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-google-oauth2', '~> 0.8.0'
+
+group :test do
+  gem 'simplecov', require: false
+  gem 'rspec-rails', '~> 4.0.0'
+  gem 'database_cleaner-active_record', '~> 1.8.0'
+  gem 'capybara', '~> 3.32.1'
+  gem 'selenium-webdriver', '~> 3.142.7'
+  gem 'chromedriver-helper', '~> 2.1.1'
+end
