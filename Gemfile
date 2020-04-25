@@ -68,6 +68,7 @@ gem 'figaro', '~> 1.1.1'
 
 gem 'rails-observers', '~> 0.1.5'
 gem 'devise', '~> 4.7.1'
+gem 'kaminari', '~> 1.2.0'
 
 group :test do
   gem 'simplecov', require: false
