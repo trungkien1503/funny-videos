@@ -65,4 +65,3 @@ gem 'figaro', '~> 1.1.1'
 
 gem 'rails-observers', '~> 0.1.5'
 gem 'omniauth-google-oauth2'
-
