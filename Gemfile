@@ -66,7 +66,8 @@ gem 'slim-rails', '~> 3.2.0'
 gem 'figaro', '~> 1.1.1'
 
 gem 'rails-observers', '~> 0.1.5'
-gem 'omniauth-google-oauth2', '~> 0.8.0'
+
+gem 'devise', '~> 4.7.1'
 
 group :test do
   gem 'simplecov', require: false

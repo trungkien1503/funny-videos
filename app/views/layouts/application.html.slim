@@ -1,8 +1,9 @@
 doctype html
 html
   head
-    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
-    title FunnyVideos
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"]
+    title Funny Videos
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -15,7 +16,24 @@ html
         .navbar-header
           = link_to 'Funny Videos', root_path, class: 'navbar-brand'
         ul.nav.navbar-nav
-          li= link_to 'Add Video', new_video_path
+          li= link_to 'Hot Videos', root_path
+        ul.nav.navbar-nav.navbar-right
+          - if user_signed_in?
+            li
+              a.navbar-link
+                | Welcome
+                strong
+                  = current_user.email
+            li
+              = link_to 'Share a video', share_path, class: 'navbar-link'
+            li
+              = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'navbar-link'
+          - else
+            li
+              = link_to 'Sign up', new_user_registration_path, class: 'navbar-link'
+            li
+              = link_to 'Login', new_user_session_path, class: 'navbar-link'
+
     .container
       - flash.each do |key, value|
         div class=("alert alert-#{key}")
