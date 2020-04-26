@@ -7,7 +7,7 @@
       - @videos.each do |video|
         .col-xs-12.col-sm-6.col-md-4
           .yt_video.thumbnail
-            = link_to image_tag(video.youtube_url, alt: video.title, class: 'img-rounded'),
+            = link_to image_tag(video.image_url, alt: video.title, class: 'img-rounded'),
                       video.watch_url, target: '_blank'
             .caption
               h5 = video.title

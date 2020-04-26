@@ -4,7 +4,7 @@ h2 Log in
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .form-group
         = f.label :username
-        = f.text_field :login, autofocus: true, class: 'form-control'
+        = f.text_field :login, autofocus: true, class: 'form-control', id: 'login'
       .form-group
         = f.label :password
         = f.password_field :password, autocomplete: 'current-password', class: 'form-control'

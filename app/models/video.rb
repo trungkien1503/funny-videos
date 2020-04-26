@@ -9,7 +9,7 @@ class Video < ApplicationRecord
 
   validates :link, presence: true, format: YT_LINK_FORMAT
 
-  def youtube_url
+  def image_url
     "https://img.youtube.com/vi/#{uid}/mqdefault.jpg"
   end
 
