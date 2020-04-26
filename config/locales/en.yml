@@ -42,13 +42,14 @@ en:
     logout: 'Logout'
     signup: 'Sign up'
     login: 'Login'
+    submit: 'Share'
     view_as_grid: 'Grid View'
   messages:
-    add_successful: 'Video added!'
+    add_successful: 'Video added successful!'
   jumbotron:
     heading: Share your videos with the world!
     text: Click the button below to share your video from YouTube.
     share_now: Share a video now!
   new:
-    title: New video
+    title: Share a video from youtube
     video_hint: A link to the video on YouTube.

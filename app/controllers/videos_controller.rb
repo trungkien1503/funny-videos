@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class VideosController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: %i[index grid_view]
 
   def index
     @videos = Video.page(page).includes(:user).order('created_at DESC')

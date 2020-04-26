@@ -72,6 +72,9 @@ Layout/MultilineMethodCallIndentation:
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
 
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
 Lint/UselessAccessModifier:
   Enabled: false
 
