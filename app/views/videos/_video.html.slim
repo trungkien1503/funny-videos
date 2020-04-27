@@ -1,0 +1,20 @@
+.yt_video
+  .col-xs-12.col-sm-4
+    .embed-responsive.embed-responsive-4by3
+      iframe width="100%" height="200" src="#{video.embed_url}" class="embed-responsive-item" frameborder="0"
+  .col-xs-12.col-sm-8
+    = link_to video_path(video), class: 'video-item' do
+      .caption
+        div
+          span = t('share_by')
+          = video.user.email
+        h5.title = video.title
+        p = t('publish_at', time: video.published_at.strftime('%-d %B %Y %H:%M'))
+        div
+          span.glyphicon.glyphicon.glyphicon-thumbs-up
+          span.likes = video.likes
+          span.glyphicon.glyphicon.glyphicon-thumbs-down
+          span.dislikes = video.dislikes
+        div
+          .description-label = t('description')
+          p = video.description

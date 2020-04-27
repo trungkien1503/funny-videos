@@ -10,6 +10,7 @@ class User < ApplicationRecord
   attr_writer :login
 
   has_many :videos, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   # Only allow letter, number, underscore and punctuation.

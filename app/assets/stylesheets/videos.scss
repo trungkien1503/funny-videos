@@ -24,3 +24,16 @@
     margin: 10px 0;
   }
 }
+
+.user_name{
+  font-size:14px;
+  font-weight: bold;
+}
+.comments-list .media{
+  border-bottom: 1px dotted #ccc;
+}
+
+.video-item, .video-item:hover {
+  color: inherit;
+  text-decoration: none;
+}

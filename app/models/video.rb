@@ -6,6 +6,7 @@ class Video < ApplicationRecord
   paginates_per 6
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   validates :link, presence: true, format: YT_LINK_FORMAT
 
