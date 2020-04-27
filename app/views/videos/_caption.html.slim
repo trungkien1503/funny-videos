@@ -1,0 +1,14 @@
+.caption
+  div
+    span = t('share_by')
+    = video.user.email
+  h5.title = video.title
+  p = t('publish_at', time: video.published_at.strftime('%-d %B %Y %H:%M'))
+  div
+    span.glyphicon.glyphicon.glyphicon-thumbs-up
+    span.likes = video.likes
+    span.glyphicon.glyphicon.glyphicon-thumbs-down
+    span.dislikes = video.dislikes
+  div
+    .description-label = t('description')
+    p = video.description

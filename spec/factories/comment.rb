@@ -5,6 +5,6 @@ FactoryBot.define do
   factory :comment do
     user
     video
-    body { 'this is a comment' }
+    sequence(:body) { |i| "this is a comment #{Process.pid}-#{i}" }
   end
 end
