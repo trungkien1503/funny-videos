@@ -37,6 +37,8 @@ en:
   share_by: 'Share by: '
   description: 'Description:'
   latest_videos: Latest videos
+  comments: Comments
+  add_comment: Add new comment
   buttons:
     share: 'Share a video'
     logout: 'Logout'
@@ -44,8 +46,12 @@ en:
     login: 'Login'
     submit: 'Share'
     view_as_grid: 'Grid View'
+    comment: Comment
   messages:
-    add_successful: 'Video added successful!'
+    videos:
+      create_success: 'Video added successful!'
+    comments:
+      create_success: "You're added a comment sucessful!"
   jumbotron:
     heading: Share your videos with the world!
     text: Click the button below to share your video from YouTube.

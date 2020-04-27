@@ -1,0 +1,27 @@
+.container
+  h2 = @video.title
+  .row
+    = render 'video', video: @video
+
+  h3 = t('comments')
+  .row
+    .col-xs-12.col-sm-6
+      .comments-list
+        - @comments.each do |comment|
+          .media
+            p.pull-right
+              small = time_ago_in_words(comment.created_at)
+            .media-body
+              h4.media-heading.user_name
+                = comment.user.username
+              = comment.body
+  = paginate @comments
+  h3 = t('add_comment')
+  .row.comment-form
+    .col-xs-12.col-sm-6
+      = form_for @new_comment, url: video_comments_path(video_id: @video.id) do |f|
+        = render 'shared/errors', object: @comment
+        .form-group
+          = f.label :body
+          = f.text_area :body, class: 'form-control', required: true
+        = f.submit t('buttons.comment'), class: 'btn btn-primary'

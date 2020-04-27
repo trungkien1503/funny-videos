@@ -16,6 +16,12 @@ class VideosController < ApplicationController
     @videos = Video.page(page).order('created_at DESC')
   end
 
+  def show
+    @video = current_user.videos.find(params[:id])
+    @comments = @video.comments.includes(:user).page(page)
+    @new_comment = @video.comments.new
+  end
+
   def new
     @video = current_user.videos.new
   end
@@ -23,7 +29,7 @@ class VideosController < ApplicationController
   def create
     @video = current_user.videos.new(video_params)
     if @video.save
-      flash[:success] = I18n.t('messages.add_successful')
+      flash[:success] = I18n.t('messages.videos.create_success')
       redirect_to root_url
     else
       render :new
